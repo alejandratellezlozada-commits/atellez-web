@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF3F8"/>
+      <stop offset="50%" stop-color="#FAFAF9"/>
+      <stop offset="100%" stop-color="#F7F0E6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="28%" cy="72%" r="55%">
+      <stop offset="0%" stop-color="#B8966C" stop-opacity="0.16"/>
+      <stop offset="65%" stop-color="#B8966C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+
+  <!-- ícono: molécula (retinoide) -->
+  <g transform="translate(600,300)" fill="none" stroke="#1D2E4A" stroke-width="2" stroke-linecap="round">
+    <path d="M0,-64 L55,-32 L55,32 L0,64 L-55,32 L-55,-32 Z"/>
+    <path d="M0,-64 L0,-16 M55,-32 L14,-8 M55,32 L14,8 M0,64 L0,16 M-55,32 L-14,8 M-55,-32 L-14,-8" stroke="#B8966C" stroke-width="1.4"/>
+    <circle cx="0" cy="-64" r="7" fill="#FAFAF9" stroke="#1D2E4A"/>
+    <circle cx="55" cy="-32" r="7" fill="#FAFAF9" stroke="#1D2E4A"/>
+    <circle cx="55" cy="32" r="7" fill="#FAFAF9" stroke="#1D2E4A"/>
+    <circle cx="0" cy="64" r="7" fill="#FAFAF9" stroke="#1D2E4A"/>
+    <circle cx="-55" cy="32" r="7" fill="#FAFAF9" stroke="#1D2E4A"/>
+    <circle cx="-55" cy="-32" r="7" fill="#FAFAF9" stroke="#1D2E4A"/>
+    <circle cx="0" cy="-8" r="5.5" fill="#B8966C" stroke="none"/>
+  </g>
+
+  <!-- línea dorada -->
+  <rect x="574" y="450" width="52" height="1.5" fill="#B8966C"/>
+</svg>
