@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPost, getPostSlugs, getAllPosts, formatDate } from "@/lib/mdx";
@@ -190,6 +191,29 @@ export default async function BlogPostPage({ params }: Props) {
                   <span>{post.readingTime} min de lectura</span>
                 </div>
               </header>
+
+              {/* Imagen de portada */}
+              {post.image && (
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: "16/9",
+                    borderRadius: "2px",
+                    overflow: "hidden",
+                    marginBottom: "2.5rem",
+                  }}
+                >
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    style={{ objectFit: "cover", objectPosition: "center top" }}
+                  />
+                </div>
+              )}
 
               {/* Contenido MDX */}
               <div className="prose-tellez">

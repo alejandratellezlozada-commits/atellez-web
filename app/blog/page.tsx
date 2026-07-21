@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, formatDate } from "@/lib/mdx";
 
 export const metadata: Metadata = {
@@ -157,20 +158,32 @@ export default function BlogPage() {
                       flexDirection: "column",
                     }}
                   >
-                    {/* Imagen placeholder */}
-                    <div
-                      style={{
-                        height: "180px",
-                        background: "var(--color-primary-50)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <svg style={{ width: "32px", height: "32px", color: "var(--color-primary)", opacity: 0.4 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
+                    {/* Imagen de portada */}
+                    <div style={{ position: "relative", height: "180px", flexShrink: 0, overflow: "hidden" }}>
+                      {post.image ? (
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          style={{ objectFit: "cover", objectPosition: "center top", transition: "transform 0.4s ease" }}
+                          className="group-hover:scale-105"
+                        />
+                      ) : (
+                        <div
+                          style={{
+                            height: "100%",
+                            background: "var(--color-primary-50)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <svg style={{ width: "32px", height: "32px", color: "var(--color-primary)", opacity: 0.4 }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                        </div>
+                      )}
                     </div>
 
                     <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column" }}>
