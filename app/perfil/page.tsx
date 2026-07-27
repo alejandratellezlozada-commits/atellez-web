@@ -109,7 +109,7 @@ export default function PerfilPage() {
                 }}
               >
                 <Image
-                  src="/images/dra-alejandra-tellez-perfil.jpg"
+                  src="/images/dra-alejandra-tellez-perfil.webp"
                   alt="Dra. Alejandra Téllez — Dermatóloga en Bogotá"
                   fill
                   priority

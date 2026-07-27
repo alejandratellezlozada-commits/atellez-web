@@ -7,17 +7,17 @@ import { services, getServiceBySlug } from "@/lib/services";
 type Props = { params: Promise<{ slug: string }> };
 
 const serviceImages: Record<string, { src: string; position: string }> = {
-  "acne":                  { src: "/images/servicios/acne.jpg",                  position: "center 20%" },
-  "toxina-botulinica":     { src: "/images/servicios/toxina-botulinica.jpg",     position: "center 30%" },
-  "acido-hialuronico":     { src: "/images/servicios/acido-hialuronico.jpg",     position: "center 40%" },
-  "laser-co2":             { src: "/images/servicios/laser-co2.jpg",             position: "center 35%" },
-  "alopecia":              { src: "/images/servicios/alopecia.jpg",              position: "center 30%" },
-  "peeling-quimico":       { src: "/images/servicios/peeling-quimico.jpg",       position: "center 35%" },
-  "mesoterapia-capilar":   { src: "/images/servicios/mesoterapia-capilar.jpg",   position: "center 40%" },
-  "retiro-lunares-lipomas":{ src: "/images/servicios/retiro-lunares-lipomas.jpg",position: "center 30%" },
-  "depilacion-laser":      { src: "/images/servicios/depilacion-laser.jpg",      position: "center 70%" },
-  "cosmelan":              { src: "/images/servicios/peeling-quimico.jpg",        position: "center 40%" },
-  "sculptra":              { src: "/images/servicios/acido-hialuronico.jpg",      position: "center 35%" },
+  "acne":                  { src: "/images/servicios/acne.webp",                  position: "center 20%" },
+  "toxina-botulinica":     { src: "/images/servicios/toxina-botulinica.webp",     position: "center 30%" },
+  "acido-hialuronico":     { src: "/images/servicios/acido-hialuronico.webp",     position: "center 40%" },
+  "laser-co2":             { src: "/images/servicios/laser-co2.webp",             position: "center 35%" },
+  "alopecia":              { src: "/images/servicios/alopecia.webp",              position: "center 30%" },
+  "peeling-quimico":       { src: "/images/servicios/peeling-quimico.webp",       position: "center 35%" },
+  "mesoterapia-capilar":   { src: "/images/servicios/mesoterapia-capilar.webp",   position: "center 40%" },
+  "retiro-lunares-lipomas":{ src: "/images/servicios/retiro-lunares-lipomas.webp",position: "center 30%" },
+  "depilacion-laser":      { src: "/images/servicios/depilacion-laser.webp",      position: "center 70%" },
+  "cosmelan":              { src: "/images/servicios/peeling-quimico.webp",        position: "center 40%" },
+  "sculptra":              { src: "/images/servicios/acido-hialuronico.webp",      position: "center 35%" },
 };
 
 export async function generateStaticParams() {
@@ -368,7 +368,7 @@ export default async function ServicePage({ params }: Props) {
                 <div style={{ border: "1px solid var(--color-border)", borderRadius: "2px", padding: "1.5rem", background: "var(--color-surface)" }}>
                   <div style={{ display: "flex", gap: "0.875rem", alignItems: "flex-start" }}>
                     <Image
-                      src="/images/dra-alejandra-tellez.jpg"
+                      src="/images/dra-alejandra-tellez.webp"
                       alt="Dra. Alejandra Téllez"
                       width={52}
                       height={52}

@@ -412,7 +412,7 @@ export default function HomePage() {
                   }}
                 >
                   <Image
-                    src="/images/dra-alejandra-tellez.jpg"
+                    src="/images/dra-alejandra-tellez.webp"
                     alt="Dra. Alejandra Téllez — Dermatóloga en Bogotá"
                     fill
                     priority
@@ -1442,10 +1442,10 @@ export default function HomePage() {
             className="md:grid-cols-4"
           >
             {[
-              { src: "/images/resultados/labios-1.jpg", label: "AH · Labios" },
-              { src: "/images/resultados/botox-1.jpg", label: "Toxina Botulínica" },
-              { src: "/images/resultados/cosmelan-1.jpg", label: "Cosmelan" },
-              { src: "/images/resultados/ojeras-1.jpg", label: "AH · Ojeras" },
+              { src: "/images/resultados/labios-1.webp", label: "AH · Labios" },
+              { src: "/images/resultados/botox-1.webp", label: "Toxina Botulínica" },
+              { src: "/images/resultados/cosmelan-1.webp", label: "Cosmelan" },
+              { src: "/images/resultados/ojeras-1.webp", label: "AH · Ojeras" },
             ].map((item, i) => (
               <Link
                 key={i}
@@ -1539,12 +1539,12 @@ export default function HomePage() {
             }}
           >
             {[
-              { src: "/images/dra-alejandra-tellez.jpg", alt: "Dra. Alejandra Téllez" },
-              { src: "/images/servicios/toxina-botulinica.jpg", alt: "Toxina Botulínica" },
-              { src: "/images/servicios/peeling-quimico.jpg", alt: "Peeling Químico" },
-              { src: "/images/servicios/acne.jpg", alt: "Tratamiento Acné" },
-              { src: "/images/servicios/alopecia.jpg", alt: "Tricología" },
-              { src: "/images/servicios/depilacion-laser.jpg", alt: "Depilación Láser" },
+              { src: "/images/dra-alejandra-tellez.webp", alt: "Dra. Alejandra Téllez" },
+              { src: "/images/servicios/toxina-botulinica.webp", alt: "Toxina Botulínica" },
+              { src: "/images/servicios/peeling-quimico.webp", alt: "Peeling Químico" },
+              { src: "/images/servicios/acne.webp", alt: "Tratamiento Acné" },
+              { src: "/images/servicios/alopecia.webp", alt: "Tricología" },
+              { src: "/images/servicios/depilacion-laser.webp", alt: "Depilación Láser" },
             ].map((post, i) => (
               <a
                 key={i}

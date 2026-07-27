@@ -11,17 +11,17 @@ export const metadata: Metadata = {
 };
 
 const serviceVisuals: Record<string, { image: string; position: string; tag: string; benefit: string }> = {
-  "acne":                   { image: "/images/servicios/acne.jpg",                  position: "center 20%", tag: "Clínica",    benefit: "Piel Clara" },
-  "toxina-botulinica":      { image: "/images/servicios/toxina-botulinica.jpg",     position: "center 30%", tag: "Estética",   benefit: "Sin Arrugas" },
-  "acido-hialuronico":      { image: "/images/servicios/acido-hialuronico.jpg",     position: "center 40%", tag: "Estética",   benefit: "Volumen" },
-  "laser-co2":              { image: "/images/servicios/laser-co2.jpg",             position: "center 35%", tag: "Láser",      benefit: "Piel Nueva" },
-  "alopecia":               { image: "/images/servicios/alopecia.jpg",              position: "center 30%", tag: "Tricología", benefit: "Pelo Sano" },
-  "peeling-quimico":        { image: "/images/servicios/peeling-quimico.jpg",       position: "center 35%", tag: "Estética",   benefit: "Luminosidad" },
-  "mesoterapia-capilar":    { image: "/images/servicios/mesoterapia-capilar.jpg",   position: "center 40%", tag: "Tricología", benefit: "Pelo Fuerte" },
-  "retiro-lunares-lipomas": { image: "/images/servicios/retiro-lunares-lipomas.jpg",position: "center 30%", tag: "Clínica",    benefit: "Sin Lesiones" },
-  "depilacion-laser":       { image: "/images/servicios/depilacion-laser.jpg",      position: "center 70%", tag: "Láser",      benefit: "Sin Pelo" },
-  "cosmelan":               { image: "/images/servicios/cosmelan.jpg",              position: "center 40%", tag: "Estética",   benefit: "Sin Manchas" },
-  "sculptra":               { image: "/images/servicios/acido-hialuronico.jpg",     position: "center 35%", tag: "Estética",   benefit: "Colágeno" },
+  "acne":                   { image: "/images/servicios/acne.webp",                  position: "center 20%", tag: "Clínica",    benefit: "Piel Clara" },
+  "toxina-botulinica":      { image: "/images/servicios/toxina-botulinica.webp",     position: "center 30%", tag: "Estética",   benefit: "Sin Arrugas" },
+  "acido-hialuronico":      { image: "/images/servicios/acido-hialuronico.webp",     position: "center 40%", tag: "Estética",   benefit: "Volumen" },
+  "laser-co2":              { image: "/images/servicios/laser-co2.webp",             position: "center 35%", tag: "Láser",      benefit: "Piel Nueva" },
+  "alopecia":               { image: "/images/servicios/alopecia.webp",              position: "center 30%", tag: "Tricología", benefit: "Pelo Sano" },
+  "peeling-quimico":        { image: "/images/servicios/peeling-quimico.webp",       position: "center 35%", tag: "Estética",   benefit: "Luminosidad" },
+  "mesoterapia-capilar":    { image: "/images/servicios/mesoterapia-capilar.webp",   position: "center 40%", tag: "Tricología", benefit: "Pelo Fuerte" },
+  "retiro-lunares-lipomas": { image: "/images/servicios/retiro-lunares-lipomas.webp",position: "center 30%", tag: "Clínica",    benefit: "Sin Lesiones" },
+  "depilacion-laser":       { image: "/images/servicios/depilacion-laser.webp",      position: "center 70%", tag: "Láser",      benefit: "Sin Pelo" },
+  "cosmelan":               { image: "/images/servicios/cosmelan.webp",              position: "center 40%", tag: "Estética",   benefit: "Sin Manchas" },
+  "sculptra":               { image: "/images/servicios/acido-hialuronico.webp",     position: "center 35%", tag: "Estética",   benefit: "Colágeno" },
 };
 
 const categories = [

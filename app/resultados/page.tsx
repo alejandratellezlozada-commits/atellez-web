@@ -23,44 +23,44 @@ interface GalleryItem {
 
 const gallery: GalleryItem[] = [
   // Botox
-  { src: "/images/resultados/botox-1.jpg", alt: "Resultado toxina botulínica — antes y después", category: "Toxina Botulínica", label: "Toxina Botulínica" },
-  { src: "/images/resultados/botox-2.jpg", alt: "Resultado botox frente y entrecejo — antes y después", category: "Toxina Botulínica", label: "Toxina Botulínica" },
-  { src: "/images/resultados/botox-3.jpg", alt: "Resultado botox patas de gallo — antes y después", category: "Toxina Botulínica", label: "Toxina Botulínica" },
+  { src: "/images/resultados/botox-1.webp", alt: "Resultado toxina botulínica — antes y después", category: "Toxina Botulínica", label: "Toxina Botulínica" },
+  { src: "/images/resultados/botox-2.webp", alt: "Resultado botox frente y entrecejo — antes y después", category: "Toxina Botulínica", label: "Toxina Botulínica" },
+  { src: "/images/resultados/botox-3.webp", alt: "Resultado botox patas de gallo — antes y después", category: "Toxina Botulínica", label: "Toxina Botulínica" },
   // Labios
-  { src: "/images/resultados/labios-antes-1.jpg", alt: "Antes filler de labios — ácido hialurónico", category: "Ácido Hialurónico", label: "AH — Labios" },
-  { src: "/images/resultados/labios-despues-1.jpg", alt: "Después filler de labios — ácido hialurónico", category: "Ácido Hialurónico", label: "AH — Labios" },
+  { src: "/images/resultados/labios-antes-1.webp", alt: "Antes filler de labios — ácido hialurónico", category: "Ácido Hialurónico", label: "AH — Labios" },
+  { src: "/images/resultados/labios-despues-1.webp", alt: "Después filler de labios — ácido hialurónico", category: "Ácido Hialurónico", label: "AH — Labios" },
   // Ojeras
-  { src: "/images/resultados/ojeras-1.jpg", alt: "Resultado ácido hialurónico ojeras — antes y después", category: "Ácido Hialurónico", label: "AH — Ojeras" },
-  { src: "/images/resultados/ojeras-2.jpg", alt: "Resultado filler valle lagrimal — antes y después", category: "Ácido Hialurónico", label: "AH — Ojeras" },
+  { src: "/images/resultados/ojeras-1.webp", alt: "Resultado ácido hialurónico ojeras — antes y después", category: "Ácido Hialurónico", label: "AH — Ojeras" },
+  { src: "/images/resultados/ojeras-2.webp", alt: "Resultado filler valle lagrimal — antes y después", category: "Ácido Hialurónico", label: "AH — Ojeras" },
   // Rinomodelación
-  { src: "/images/resultados/nariz-antes-1.jpg", alt: "Antes rinomodelación con ácido hialurónico", category: "Ácido Hialurónico", label: "AH — Nariz" },
-  { src: "/images/resultados/nariz-despues-1.jpg", alt: "Después rinomodelación con ácido hialurónico", category: "Ácido Hialurónico", label: "AH — Nariz" },
-  { src: "/images/resultados/nariz-antes-2.jpg", alt: "Antes rinomodelación caso 2", category: "Ácido Hialurónico", label: "AH — Nariz" },
-  { src: "/images/resultados/nariz-despues-2.jpg", alt: "Después rinomodelación caso 2", category: "Ácido Hialurónico", label: "AH — Nariz" },
-  { src: "/images/resultados/nariz-antes-3.jpg", alt: "Antes rinomodelación caso 3", category: "Ácido Hialurónico", label: "AH — Nariz" },
-  { src: "/images/resultados/nariz-despues-3.jpg", alt: "Después rinomodelación caso 3", category: "Ácido Hialurónico", label: "AH — Nariz" },
+  { src: "/images/resultados/nariz-antes-1.webp", alt: "Antes rinomodelación con ácido hialurónico", category: "Ácido Hialurónico", label: "AH — Nariz" },
+  { src: "/images/resultados/nariz-despues-1.webp", alt: "Después rinomodelación con ácido hialurónico", category: "Ácido Hialurónico", label: "AH — Nariz" },
+  { src: "/images/resultados/nariz-antes-2.webp", alt: "Antes rinomodelación caso 2", category: "Ácido Hialurónico", label: "AH — Nariz" },
+  { src: "/images/resultados/nariz-despues-2.webp", alt: "Después rinomodelación caso 2", category: "Ácido Hialurónico", label: "AH — Nariz" },
+  { src: "/images/resultados/nariz-antes-3.webp", alt: "Antes rinomodelación caso 3", category: "Ácido Hialurónico", label: "AH — Nariz" },
+  { src: "/images/resultados/nariz-despues-3.webp", alt: "Después rinomodelación caso 3", category: "Ácido Hialurónico", label: "AH — Nariz" },
   // Surcos nasogenianos
-  { src: "/images/resultados/surcos-antes-1.jpg", alt: "Antes surcos nasogenianos — filler", category: "Ácido Hialurónico", label: "AH — Surcos" },
-  { src: "/images/resultados/surcos-despues-1.jpg", alt: "Después surcos nasogenianos — filler", category: "Ácido Hialurónico", label: "AH — Surcos" },
-  { src: "/images/resultados/surcos-antes-2.jpg", alt: "Antes surcos nasogenianos caso 2", category: "Ácido Hialurónico", label: "AH — Surcos" },
-  { src: "/images/resultados/surcos-despues-2.jpg", alt: "Después surcos nasogenianos caso 2", category: "Ácido Hialurónico", label: "AH — Surcos" },
+  { src: "/images/resultados/surcos-antes-1.webp", alt: "Antes surcos nasogenianos — filler", category: "Ácido Hialurónico", label: "AH — Surcos" },
+  { src: "/images/resultados/surcos-despues-1.webp", alt: "Después surcos nasogenianos — filler", category: "Ácido Hialurónico", label: "AH — Surcos" },
+  { src: "/images/resultados/surcos-antes-2.webp", alt: "Antes surcos nasogenianos caso 2", category: "Ácido Hialurónico", label: "AH — Surcos" },
+  { src: "/images/resultados/surcos-despues-2.webp", alt: "Después surcos nasogenianos caso 2", category: "Ácido Hialurónico", label: "AH — Surcos" },
   // Líneas marioneta
-  { src: "/images/resultados/marioneta-antes-1.jpg", alt: "Antes líneas marioneta — filler", category: "Ácido Hialurónico", label: "AH — Marioneta" },
-  { src: "/images/resultados/marioneta-despues-1.jpg", alt: "Después líneas marioneta — filler", category: "Ácido Hialurónico", label: "AH — Marioneta" },
+  { src: "/images/resultados/marioneta-antes-1.webp", alt: "Antes líneas marioneta — filler", category: "Ácido Hialurónico", label: "AH — Marioneta" },
+  { src: "/images/resultados/marioneta-despues-1.webp", alt: "Después líneas marioneta — filler", category: "Ácido Hialurónico", label: "AH — Marioneta" },
   // Sculptra
-  { src: "/images/resultados/sculptra-1.jpg", alt: "Resultado Sculptra bioestimulador — antes y después", category: "Sculptra", label: "Sculptra" },
-  { src: "/images/resultados/sculptra-2.jpg", alt: "Resultado Sculptra volumen facial — antes y después", category: "Sculptra", label: "Sculptra" },
+  { src: "/images/resultados/sculptra-1.webp", alt: "Resultado Sculptra bioestimulador — antes y después", category: "Sculptra", label: "Sculptra" },
+  { src: "/images/resultados/sculptra-2.webp", alt: "Resultado Sculptra volumen facial — antes y después", category: "Sculptra", label: "Sculptra" },
   // Cosmelan
-  { src: "/images/resultados/cosmelan-antes-1.jpg", alt: "Antes Cosmelan — manchas e hiperpigmentación", category: "Cosmelan", label: "Cosmelan" },
-  { src: "/images/resultados/cosmelan-despues-1.jpg", alt: "Después Cosmelan — piel uniforme sin manchas", category: "Cosmelan", label: "Cosmelan" },
+  { src: "/images/resultados/cosmelan-antes-1.webp", alt: "Antes Cosmelan — manchas e hiperpigmentación", category: "Cosmelan", label: "Cosmelan" },
+  { src: "/images/resultados/cosmelan-despues-1.webp", alt: "Después Cosmelan — piel uniforme sin manchas", category: "Cosmelan", label: "Cosmelan" },
   // Dermapen
-  { src: "/images/resultados/dermapen-antes-1.jpg", alt: "Antes Dermapen — textura y cicatrices", category: "Dermapen", label: "Dermapen" },
-  { src: "/images/resultados/dermapen-despues-1.jpg", alt: "Después Dermapen — piel renovada", category: "Dermapen", label: "Dermapen" },
+  { src: "/images/resultados/dermapen-antes-1.webp", alt: "Antes Dermapen — textura y cicatrices", category: "Dermapen", label: "Dermapen" },
+  { src: "/images/resultados/dermapen-despues-1.webp", alt: "Después Dermapen — piel renovada", category: "Dermapen", label: "Dermapen" },
   // Retiro de lunares
-  { src: "/images/resultados/retiro-lunar-antes-1.jpg", alt: "Antes retiro de lunar nariz y mejilla", category: "Retiro de Lunares", label: "Retiro Lunar" },
-  { src: "/images/resultados/retiro-lunar-despues-1.jpg", alt: "Después retiro de lunar nariz y mejilla", category: "Retiro de Lunares", label: "Retiro Lunar" },
+  { src: "/images/resultados/retiro-lunar-antes-1.webp", alt: "Antes retiro de lunar nariz y mejilla", category: "Retiro de Lunares", label: "Retiro Lunar" },
+  { src: "/images/resultados/retiro-lunar-despues-1.webp", alt: "Después retiro de lunar nariz y mejilla", category: "Retiro de Lunares", label: "Retiro Lunar" },
   // Alopecia
-  { src: "/images/resultados/alopecia-1.jpg", alt: "Resultado tratamiento alopecia — antes y después", category: "Alopecia", label: "Alopecia" },
+  { src: "/images/resultados/alopecia-1.webp", alt: "Resultado tratamiento alopecia — antes y después", category: "Alopecia", label: "Alopecia" },
 ];
 
 const categories = ["Toxina Botulínica", "Ácido Hialurónico", "Sculptra", "Cosmelan", "Dermapen", "Retiro de Lunares", "Alopecia"];
@@ -136,14 +136,14 @@ export default function ResultadosPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { label: "Filler de Labios",             before: "/images/resultados/labios-antes-1.jpg",        after: "/images/resultados/labios-despues-1.jpg",        ratio: "2 / 1" },
-              { label: "Rinomodelación — Caso 2",      before: "/images/resultados/nariz-antes-2.jpg",         after: "/images/resultados/nariz-despues-2.jpg",         ratio: "3 / 4" },
-              { label: "Rinomodelación — Caso 3",      before: "/images/resultados/nariz-antes-3.jpg",         after: "/images/resultados/nariz-despues-3.jpg",         ratio: "3 / 4" },
-              { label: "Surcos Nasogenianos — Caso 1", before: "/images/resultados/surcos-antes-1.jpg",        after: "/images/resultados/surcos-despues-1.jpg",        ratio: "4 / 3" },
-              { label: "Surcos Nasogenianos — Caso 2", before: "/images/resultados/surcos-antes-2.jpg",        after: "/images/resultados/surcos-despues-2.jpg",        ratio: "8 / 5" },
-              { label: "Líneas Marioneta",              before: "/images/resultados/marioneta-antes-1.jpg",    after: "/images/resultados/marioneta-despues-1.jpg",     ratio: "4 / 3" },
-              { label: "Cosmelan",                      before: "/images/resultados/cosmelan-antes-1.jpg",     after: "/images/resultados/cosmelan-despues-1.jpg",      ratio: "3 / 4" },
-              { label: "Retiro de Lunar",               before: "/images/resultados/retiro-lunar-antes-1.jpg", after: "/images/resultados/retiro-lunar-despues-1.jpg",  ratio: "3 / 4" },
+              { label: "Filler de Labios",             before: "/images/resultados/labios-antes-1.webp",        after: "/images/resultados/labios-despues-1.webp",        ratio: "2 / 1" },
+              { label: "Rinomodelación — Caso 2",      before: "/images/resultados/nariz-antes-2.webp",         after: "/images/resultados/nariz-despues-2.webp",         ratio: "3 / 4" },
+              { label: "Rinomodelación — Caso 3",      before: "/images/resultados/nariz-antes-3.webp",         after: "/images/resultados/nariz-despues-3.webp",         ratio: "3 / 4" },
+              { label: "Surcos Nasogenianos — Caso 1", before: "/images/resultados/surcos-antes-1.webp",        after: "/images/resultados/surcos-despues-1.webp",        ratio: "4 / 3" },
+              { label: "Surcos Nasogenianos — Caso 2", before: "/images/resultados/surcos-antes-2.webp",        after: "/images/resultados/surcos-despues-2.webp",        ratio: "8 / 5" },
+              { label: "Líneas Marioneta",              before: "/images/resultados/marioneta-antes-1.webp",    after: "/images/resultados/marioneta-despues-1.webp",     ratio: "4 / 3" },
+              { label: "Cosmelan",                      before: "/images/resultados/cosmelan-antes-1.webp",     after: "/images/resultados/cosmelan-despues-1.webp",      ratio: "3 / 4" },
+              { label: "Retiro de Lunar",               before: "/images/resultados/retiro-lunar-antes-1.webp", after: "/images/resultados/retiro-lunar-despues-1.webp",  ratio: "3 / 4" },
             ].map((caso) => (
               <BeforeAfterSlider
                 key={caso.label}

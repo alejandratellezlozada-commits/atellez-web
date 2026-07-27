@@ -79,7 +79,7 @@ const schemaOrg = {
       "@id": "https://alejandratellezderma.com/#physician",
       name: "Dra. Alejandra Téllez",
       url: "https://alejandratellezderma.com",
-      image: "https://alejandratellezderma.com/images/dra-alejandra-tellez.jpg",
+      image: "https://alejandratellezderma.com/images/dra-alejandra-tellez.webp",
       description:
         "Médica dermatóloga con más de 8 años de experiencia en Bogotá, Colombia. Especialista en dermatología clínica y estética.",
       medicalSpecialty: "Dermatology",
