@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import MapEmbed from "@/components/MapEmbed";
 
 export const metadata: Metadata = {
   title: "Contacto — Dra. Alejandra Téllez, Dermatóloga Bogotá",
@@ -400,14 +401,8 @@ export default function ContactoPage() {
 
             {/* Mapa */}
             <div style={{ borderRadius: "2px", overflow: "hidden", border: "1px solid var(--color-border)", height: "400px" }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.4755484177326!2d-74.05043368573!3d4.6978939428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bef6e5e4f0d%3A0x7f7b9b9b9b9b9b9b!2sAv.%20Carrera%2019%20%2397-31%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
-                width="100%"
-                height="100%"
-                style={{ border: 0, display: "block" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+              <MapEmbed
+                query="Avenida Carrera 19 #97-31, Consultorio 606, Bogotá, Colombia"
                 title="Ubicación consultorio Dra. Alejandra Téllez"
               />
             </div>

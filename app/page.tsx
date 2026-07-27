@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts, formatDate } from "@/lib/mdx";
+import MapEmbed from "@/components/MapEmbed";
 
 export const metadata: Metadata = {
   title: "Dra. Alejandra Téllez — Dermatóloga en Bogotá",
@@ -1862,7 +1863,7 @@ export default function HomePage() {
               </div>
 
               <a
-                href="https://maps.app.goo.gl/NkqFgPgqJbL3p6uc9"
+                href="https://www.google.com/maps/search/?api=1&query=Avenida+Carrera+19+%2397-31%2C+Consultorio+606%2C+Bogot%C3%A1%2C+Colombia"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -1893,14 +1894,8 @@ export default function HomePage() {
                 height: "420px",
               }}
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.4755484177326!2d-74.05043368573!3d4.6978939428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bef6e5e4f0d%3A0x7f7b9b9b9b9b9b9b!2sAv.%20Carrera%2019%20%2397-31%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
-                width="100%"
-                height="100%"
-                style={{ border: 0, display: "block" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+              <MapEmbed
+                query="Avenida Carrera 19 #97-31, Consultorio 606, Bogotá, Colombia"
                 title="Ubicación consultorio Dra. Alejandra Téllez"
               />
             </div>
