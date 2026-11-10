@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad — Dra. Alejandra Téllez",
   description:
     "Política de tratamiento de datos personales del sitio web de la Dra. Alejandra Téllez, conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013.",
-  alternates: { canonical: "https://alejandratellezderma.com/politica-de-privacidad" },
+  alternates: alternatesFor("/politica-de-privacidad", "es"),
   robots: { index: true, follow: false },
 };
 

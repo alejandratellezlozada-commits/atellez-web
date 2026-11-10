@@ -3,21 +3,55 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { localeFromPath } from "@/lib/i18n";
 
-const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/perfil", label: "Perfil" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/resultados", label: "Resultados" },
-  { href: "/cuidados", label: "Cuidados Pre & Post" },
-  { href: "/blog", label: "Blog" },
-  { href: "/noticias", label: "Noticias" },
-  { href: "/contacto", label: "Contacto" },
-];
+const navLinksByLocale = {
+  es: [
+    { href: "/", label: "Inicio" },
+    { href: "/perfil", label: "Perfil" },
+    { href: "/servicios", label: "Servicios" },
+    { href: "/resultados", label: "Resultados" },
+    { href: "/cuidados", label: "Cuidados Pre & Post" },
+    { href: "/blog", label: "Blog" },
+    { href: "/noticias", label: "Noticias" },
+    { href: "/contacto", label: "Contacto" },
+  ],
+  en: [
+    { href: "/en", label: "Home" },
+    { href: "/en/about", label: "About" },
+    { href: "/en/services", label: "Services" },
+    { href: "/en/results", label: "Results" },
+    { href: "/en/care", label: "Pre & Post Care" },
+    { href: "/en/blog", label: "Blog" },
+    { href: "/en/news", label: "News" },
+    { href: "/en/contact", label: "Contact" },
+  ],
+};
+
+const textByLocale = {
+  es: {
+    subtitle: "Dermatóloga · Bogotá",
+    book: "Agendar cita",
+    bookLong: "Agendar cita en Doctoralia",
+    openMenu: "Abrir menú",
+  },
+  en: {
+    subtitle: "Dermatologist · Bogotá",
+    book: "Book now",
+    bookLong: "Book on Doctoralia",
+    openMenu: "Open menu",
+  },
+};
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const rawPathname = usePathname() ?? "/";
+  // Normalize trailing slash (trailingSlash: true) so "/perfil/" matches "/perfil"
+  const pathname = rawPathname.length > 1 ? rawPathname.replace(/\/$/, "") : rawPathname;
+  const locale = localeFromPath(pathname);
+  const navLinks = navLinksByLocale[locale];
+  const t = textByLocale[locale];
 
   return (
     <header
@@ -40,7 +74,7 @@ export default function Header() {
           }}
         >
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "2px" }}>
+          <Link href={locale === "en" ? "/en" : "/"} style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "2px" }}>
             <span
               style={{
                 fontFamily: "var(--font-cormorant)",
@@ -64,12 +98,12 @@ export default function Header() {
                 lineHeight: 1,
               }}
             >
-              Dermatóloga · Bogotá
+              {t.subtitle}
             </span>
           </Link>
 
           {/* Navegación desktop */}
-          <nav className="hidden md:flex items-center" style={{ gap: "2rem" }}>
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -113,15 +147,17 @@ export default function Header() {
                 transition: "background-color 0.2s",
               }}
             >
-              Agendar cita
+              {t.book}
             </a>
+            <LanguageSwitcher />
           </nav>
 
-          {/* Botón hamburguesa */}
+          {/* Móvil: selector de idioma + botón hamburguesa */}
+          <div className="flex lg:hidden items-center" style={{ gap: "0.5rem" }}>
+          <LanguageSwitcher />
           <button
-            className="md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Abrir menú"
+            aria-label={t.openMenu}
             style={{
               padding: "0.5rem",
               background: "none",
@@ -152,6 +188,7 @@ export default function Header() {
               </svg>
             )}
           </button>
+          </div>
         </div>
       </div>
 
@@ -209,7 +246,7 @@ export default function Header() {
                 textAlign: "center",
               }}
             >
-              Agendar cita en Doctoralia
+              {t.bookLong}
             </a>
           </nav>
         </div>

@@ -65,7 +65,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://alejandratellezderma.com",
-    languages: { "es-CO": "https://alejandratellezderma.com" },
+    languages: {
+      "es-CO": "https://alejandratellezderma.com",
+      en: "https://alejandratellezderma.com/en",
+    },
   },
   // Reemplaza el valor cuando obtengas el código de verificación en Google Search Console
   // verification: { google: "PEGA_AQUI_TU_CODIGO_DE_VERIFICACION" },

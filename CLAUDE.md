@@ -43,6 +43,17 @@ Non-obvious Next 16 requirement: metadata route files (`sitemap.ts`, `robots.ts`
 - **Services** (`lib/services.ts`): a single hardcoded `services: Service[]` array is the source of truth for `/servicios` and `/servicios/[slug]`. Each entry carries its own SEO fields (`keywords`, `faq`) that are reused both as rendered page content and as JSON-LD (`FAQPage`, `MedicalProcedure`) in the service detail page. To add/edit a service, edit this array directly — there's no content file.
 - **Blog & noticias** (`content/blog/*.mdx`, `content/noticias/*.mdx`): frontmatter (`title`, `description`, `date`, `category`, `author`, `keywords`, `featured`, `image`) parsed with `gray-matter`, exposed through `lib/mdx.ts` (`getPost`, `getAllPosts`, `getPostSlugs`, `formatDate`), and rendered with `next-mdx-remote/rsc`'s `<MDXRemote>` in `app/blog/[slug]/page.tsx` and `app/noticias/[slug]/page.tsx`. `getAllPosts` reads the filesystem at request/build time — no caching layer.
 
+### Bilingual site (Spanish + English)
+
+Spanish lives at the root (`/perfil/`), English under `/en/` with English section names (`/en/about/`, `/en/services/`, `/en/results/`, `/en/care/`, `/en/blog/`, `/en/news/`, `/en/contact/`, `/en/privacy-policy/`). Item slugs (services, blog posts, news) are the **same** in both languages. The section mapping and helpers (`esPathToEn`, `alternatePath`, `alternatesFor` for canonical + hreflang) are in `lib/i18n.ts`.
+
+- **Pages:** each Spanish page under `app/` has an English copy under `app/en/` with translated text. Editing copy on one page means editing its counterpart too.
+- **Services:** English data is in `lib/services.en.ts` (same slugs/order as `lib/services.ts`) — update both.
+- **Blog/noticias:** English MDX goes in `content/en/blog/` and `content/en/noticias/` with the same file name as the Spanish post; read via `getPost(type, slug, "en")`. If a Spanish post has no English file, its "EN" link leads to the 404 page.
+- **Shared components** (Header, Footer, ContactForm, CookieBanner, WhatsAppButton, MapEmbed, BeforeAfterSlider) pick the language from the URL via `useLocale()` and keep their own `es`/`en` text tables.
+- **Language switcher:** `components/LanguageSwitcher.tsx` (ES | EN, top-right of the header) links to the same page in the other language.
+- **`<html lang>`:** the root layout always renders `es-CO`; the `postbuild` script `scripts/set-html-lang.mjs` rewrites it to `en` in `out/en/**`.
+
 ### SEO / structured data
 
 Every route sets its own `Metadata` (title/description/canonical/OG) and inline `<script type="application/ld+json">` blocks (schema.org `Physician`/`MedicalClinic` in `app/layout.tsx`, plus per-page `MedicalProcedure`, `FAQPage`, `BreadcrumbList`, etc.). The canonical domain, `https://alejandratellezderma.com`, is hand-written into every one of these individually (`metadataBase`, `canonical`, `openGraph.url`, JSON-LD `@id`/`url`, `app/sitemap.ts`'s `BASE_URL`, `app/robots.ts`) rather than derived from a shared constant. **If the domain ever changes again, it has to be updated in every file individually** — there is no single source of truth for it. Grep for `alejandratellezderma.com` to find every occurrence.

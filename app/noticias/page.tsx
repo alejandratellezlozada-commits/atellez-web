@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/mdx";
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   title: "Noticias — Dra. Alejandra Téllez, Dermatóloga Bogotá",
   description:
     "Noticias y novedades del consultorio de la Dra. Alejandra Téllez. Congresos, reconocimientos, nuevos tratamientos y actualizaciones en dermatología.",
-  alternates: { canonical: "https://alejandratellezderma.com/noticias" },
+  alternates: alternatesFor("/noticias", "es"),
 };
 
 export default function NoticiasPage() {

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 import { getAllPosts } from "@/lib/mdx";
+import { esPathToEn } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
@@ -40,5 +41,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...noticiasRoutes];
+  const spanish = [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...noticiasRoutes];
+
+  // English version of every page (/en/...), with hreflang alternates both ways.
+  const withAlternates = (entry: MetadataRoute.Sitemap[number]): MetadataRoute.Sitemap[number] => {
+    const esPath = entry.url.slice(BASE_URL.length) || "/";
+    const en = BASE_URL + esPathToEn(esPath).replace(/\/$/, "");
+    return { ...entry, alternates: { languages: { "es-CO": entry.url, en } } };
+  };
+  const english: MetadataRoute.Sitemap = spanish.map((entry) => {
+    const withAlt = withAlternates(entry);
+    return { ...withAlt, url: withAlt.alternates!.languages!.en as string, priority: (entry.priority ?? 0.5) * 0.9 };
+  });
+
+  return [...spanish.map(withAlternates), ...english];
 }

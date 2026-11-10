@@ -2,6 +2,7 @@
 
 import { useRef, useState, useCallback, useEffect } from "react";
 import Image from "next/image";
+import { useLocale } from "@/lib/useLocale";
 
 interface Props {
   before: string;
@@ -16,12 +17,17 @@ interface Props {
 export default function BeforeAfterSlider({
   before,
   after,
-  altBefore = "Antes",
-  altAfter = "Después",
+  altBefore,
+  altAfter,
   label,
   initialPosition = 50,
   aspectRatio = "3 / 4",
 }: Props) {
+  const en = useLocale() === "en";
+  const beforeText = en ? "Before" : "Antes";
+  const afterText = en ? "After" : "Después";
+  altBefore = altBefore ?? beforeText;
+  altAfter = altAfter ?? afterText;
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(initialPosition);
   const dragging = useRef(false);
@@ -172,7 +178,7 @@ export default function BeforeAfterSlider({
           opacity: position > 15 ? 1 : 0,
           transition: "opacity 0.2s",
         }}>
-          Antes
+          {beforeText}
         </span>
         <span style={{
           position: "absolute",
@@ -190,7 +196,7 @@ export default function BeforeAfterSlider({
           opacity: position < 85 ? 1 : 0,
           transition: "opacity 0.2s",
         }}>
-          Después
+          {afterText}
         </span>
       </div>
 

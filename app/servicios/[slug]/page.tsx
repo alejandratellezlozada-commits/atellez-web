@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${service.title} en Bogotá — Dra. Alejandra Téllez`,
     description: service.shortDescription,
     keywords: service.keywords,
-    alternates: { canonical: `https://alejandratellezderma.com/servicios/${slug}` },
+    alternates: alternatesFor(`/servicios/${slug}`, "es"),
     openGraph: {
       title: `${service.title} en Bogotá | Dra. Alejandra Téllez`,
       description: service.shortDescription,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts, formatDate } from "@/lib/mdx";
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   title: "Blog de Dermatología — Dra. Alejandra Téllez, Bogotá",
   description:
     "Artículos educativos sobre dermatología clínica y estética por la Dra. Alejandra Téllez. Aprende sobre acné, alopecia, botox, láser, cuidado de la piel y más.",
-  alternates: { canonical: "https://alejandratellezderma.com/blog" },
+  alternates: alternatesFor("/blog", "es"),
   openGraph: {
     title: "Blog de Dermatología — Dra. Alejandra Téllez",
     description: "Educación dermatológica basada en evidencia. Artículos sobre acné, alopecia, botox, láser y cuidado de la piel.",

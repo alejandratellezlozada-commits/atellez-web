@@ -35,6 +35,13 @@ export default function NotFound() {
           }}
         >
           La página que buscas no existe o fue movida. Puedes volver al inicio o explorar los servicios.
+          <br />
+          <span lang="en" style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>
+            Page not found — the page you are looking for doesn&apos;t exist or has moved.{" "}
+            <Link href="/en" style={{ color: "var(--color-primary)" }}>
+              Go to the English homepage →
+            </Link>
+          </span>
         </p>
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", justifyContent: "center" }}>

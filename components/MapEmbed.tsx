@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "@/lib/useLocale";
 
 interface Props {
   query: string;
@@ -9,6 +10,7 @@ interface Props {
 
 export default function MapEmbed({ query, title }: Props) {
   const [loaded, setLoaded] = useState(false);
+  const en = useLocale() === "en";
   const embedSrc = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
 
   if (loaded) {
@@ -42,7 +44,7 @@ export default function MapEmbed({ query, title }: Props) {
         cursor: "pointer",
         padding: "1.5rem",
       }}
-      aria-label="Cargar mapa interactivo"
+      aria-label={en ? "Load interactive map" : "Cargar mapa interactivo"}
     >
       <svg
         style={{ width: "28px", height: "28px", color: "var(--color-primary)" }}
@@ -63,7 +65,7 @@ export default function MapEmbed({ query, title }: Props) {
           color: "var(--color-primary)",
         }}
       >
-        Ver mapa interactivo
+        {en ? "View interactive map" : "Ver mapa interactivo"}
       </span>
     </button>
   );

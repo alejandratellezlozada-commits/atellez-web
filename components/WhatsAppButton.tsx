@@ -1,4 +1,22 @@
+"use client";
+
+import { useLocale } from "@/lib/useLocale";
+
+const text = {
+  es: {
+    label: "¿Tienes preguntas? Escríbenos",
+    aria: "Contactar por WhatsApp",
+    message: "Hola Dra. Alejandra, me gustaría obtener información sobre sus servicios.",
+  },
+  en: {
+    label: "Questions? Message us",
+    aria: "Contact us on WhatsApp",
+    message: "Hello Dr. Alejandra, I would like to get information about your services.",
+  },
+};
+
 export default function WhatsAppButton() {
+  const t = text[useLocale()];
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 group">
       {/* Etiqueta hover */}
@@ -16,7 +34,7 @@ export default function WhatsAppButton() {
           whiteSpace: "nowrap",
         }}
       >
-        ¿Tienes preguntas? Escríbenos
+        {t.label}
       </div>
 
       {/* Botón con pulso */}
@@ -27,10 +45,10 @@ export default function WhatsAppButton() {
           style={{ backgroundColor: "#25D366", opacity: 0.35 }}
         />
         <a
-          href="https://wa.me/573147444537?text=Hola%20Dra.%20Alejandra%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20sus%20servicios."
+          href={`https://wa.me/573147444537?text=${encodeURIComponent(t.message)}`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Contactar por WhatsApp"
+          aria-label={t.aria}
           className="relative flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-transform hover:scale-110 active:scale-95"
           style={{ backgroundColor: "#25D366" }}
         >

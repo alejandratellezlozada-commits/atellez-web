@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/services";
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   title: "Servicios de Dermatología — Dra. Alejandra Téllez, Bogotá",
   description:
     "Servicios de dermatología clínica y estética en Bogotá: acné, alopecia, botox, láser CO2, Cosmelan, Sculptra, peeling químico y más. Dra. Alejandra Téllez.",
-  alternates: { canonical: "https://alejandratellezderma.com/servicios" },
+  alternates: alternatesFor("/servicios", "es"),
 };
 
 const serviceVisuals: Record<string, { image: string; position: string; tag: string; benefit: string }> = {

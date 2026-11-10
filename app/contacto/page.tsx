@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import ContactForm from "@/components/ContactForm";
 import MapEmbed from "@/components/MapEmbed";
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   title: "Contacto — Dra. Alejandra Téllez, Dermatóloga Bogotá",
   description:
     "Contáctate con la Dra. Alejandra Téllez. Consultorio en Av. Carrera 19 97-31 Cons. 606, Bogotá. WhatsApp +57 314 744 4537 o agenda en Doctoralia.",
-  alternates: { canonical: "https://alejandratellezderma.com/contacto" },
+  alternates: alternatesFor("/contacto", "es"),
 };
 
 export default function ContactoPage() {

@@ -1,26 +1,64 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useLocale } from "@/lib/useLocale";
+import { localizeHref } from "@/lib/i18n";
 
 const services = [
-  { label: "Acné", href: "/servicios/acne" },
-  { label: "Toxina Botulínica", href: "/servicios/toxina-botulinica" },
-  { label: "Ácido Hialurónico", href: "/servicios/acido-hialuronico" },
-  { label: "Láser CO2", href: "/servicios/laser-co2" },
-  { label: "Alopecia", href: "/servicios/alopecia" },
-  { label: "Cosmelan", href: "/servicios/cosmelan" },
+  { label: { es: "Acné", en: "Acne" }, href: "/servicios/acne" },
+  { label: { es: "Toxina Botulínica", en: "Botulinum Toxin" }, href: "/servicios/toxina-botulinica" },
+  { label: { es: "Ácido Hialurónico", en: "Hyaluronic Acid" }, href: "/servicios/acido-hialuronico" },
+  { label: { es: "Láser CO2", en: "CO2 Laser" }, href: "/servicios/laser-co2" },
+  { label: { es: "Alopecia", en: "Hair Loss" }, href: "/servicios/alopecia" },
+  { label: { es: "Cosmelan", en: "Cosmelan" }, href: "/servicios/cosmelan" },
 ];
 
 const quickLinks = [
-  { label: "Inicio", href: "/" },
-  { label: "Perfil", href: "/perfil" },
-  { label: "Servicios", href: "/servicios" },
-  { label: "Resultados", href: "/resultados" },
-  { label: "Blog", href: "/blog" },
-  { label: "Noticias", href: "/noticias" },
-  { label: "Contacto", href: "/contacto" },
+  { label: { es: "Inicio", en: "Home" }, href: "/" },
+  { label: { es: "Perfil", en: "About" }, href: "/perfil" },
+  { label: { es: "Servicios", en: "Services" }, href: "/servicios" },
+  { label: { es: "Resultados", en: "Results" }, href: "/resultados" },
+  { label: { es: "Blog", en: "Blog" }, href: "/blog" },
+  { label: { es: "Noticias", en: "News" }, href: "/noticias" },
+  { label: { es: "Contacto", en: "Contact" }, href: "/contacto" },
 ];
 
+const text = {
+  es: {
+    ctaTitle: "¿Lista para cuidar tu piel?",
+    ctaBody: "Agenda tu cita con la Dra. Téllez. Consulta disponible para todos los tratamientos dermatológicos.",
+    ctaButton: "Agendar cita en Doctoralia",
+    logoAlt: "Dra. Alejandra Téllez — Dermatóloga",
+    bio: "Médica dermatóloga con más de 8 años de experiencia. Especialista en dermatología clínica y estética.",
+    services: "Servicios",
+    viewAll: "Ver todos →",
+    navigation: "Navegación",
+    contact: "Contacto",
+    rights: "Dra. Alejandra Téllez. Todos los derechos reservados.",
+    license: "Matrícula profesional: 1030537845 · Información con fines educativos. No reemplaza la consulta médica.",
+    privacy: "Política de Privacidad · Ley 1581 de 2012",
+  },
+  en: {
+    ctaTitle: "Ready to take care of your skin?",
+    ctaBody: "Book your appointment with Dr. Téllez. Consultations available for all dermatological treatments.",
+    ctaButton: "Book on Doctoralia",
+    logoAlt: "Dr. Alejandra Téllez — Dermatologist",
+    bio: "Board-certified dermatologist with over 8 years of experience. Specialist in clinical and aesthetic dermatology.",
+    services: "Services",
+    viewAll: "View all →",
+    navigation: "Navigation",
+    contact: "Contact",
+    rights: "Dr. Alejandra Téllez. All rights reserved.",
+    license: "Professional license: 1030537845 · Information for educational purposes only. Does not replace a medical consultation.",
+    privacy: "Privacy Policy · Colombian Law 1581 of 2012",
+  },
+};
+
 export default function Footer() {
+  const locale = useLocale();
+  const t = text[locale];
+  const href = (esHref: string) => localizeHref(esHref, locale);
   return (
     <footer style={{ backgroundColor: "var(--color-accent-dark)", color: "white" }}>
       {/* CTA Banner */}
@@ -51,7 +89,7 @@ export default function Footer() {
             marginBottom: "1rem",
           }}
         >
-          ¿Lista para cuidar tu piel?
+          {t.ctaTitle}
         </h2>
         <p
           style={{
@@ -63,8 +101,7 @@ export default function Footer() {
             lineHeight: 1.7,
           }}
         >
-          Agenda tu cita con la Dra. Téllez. Consulta disponible para todos los
-          tratamientos dermatológicos.
+          {t.ctaBody}
         </p>
         <a
           href="https://www.doctoralia.co/alejandra-tellez/dermatologo/bogota"
@@ -83,7 +120,7 @@ export default function Footer() {
             textDecoration: "none",
           }}
         >
-          Agendar cita en Doctoralia
+          {t.ctaButton}
         </a>
       </div>
 
@@ -98,7 +135,7 @@ export default function Footer() {
             {/* Logo en footer */}
             <Image
               src="/images/logo.png"
-              alt="Dra. Alejandra Téllez — Dermatóloga"
+              alt={t.logoAlt}
               width={1920}
               height={1080}
               style={{
@@ -118,8 +155,7 @@ export default function Footer() {
                 marginBottom: "1.5rem",
               }}
             >
-              Médica dermatóloga con más de 8 años de experiencia. Especialista
-              en dermatología clínica y estética.
+              {t.bio}
             </p>
             {/* Redes sociales */}
             <div style={{ display: "flex", gap: "0.625rem" }}>
@@ -209,13 +245,13 @@ export default function Footer() {
                 fontFamily: "var(--font-body)",
               }}
             >
-              Servicios
+              {t.services}
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.625rem" }}>
               {services.map((s) => (
                 <li key={s.href}>
                   <Link
-                    href={s.href}
+                    href={href(s.href)}
                     style={{
                       fontSize: "0.875rem",
                       color: "rgba(255,255,255,0.5)",
@@ -223,13 +259,13 @@ export default function Footer() {
                       transition: "color 0.15s",
                     }}
                   >
-                    {s.label}
+                    {s.label[locale]}
                   </Link>
                 </li>
               ))}
               <li style={{ marginTop: "0.25rem" }}>
                 <Link
-                  href="/servicios"
+                  href={href("/servicios")}
                   style={{
                     fontSize: "0.75rem",
                     color: "var(--color-gold-light)",
@@ -237,7 +273,7 @@ export default function Footer() {
                     letterSpacing: "0.05em",
                   }}
                 >
-                  Ver todos →
+                  {t.viewAll}
                 </Link>
               </li>
             </ul>
@@ -256,13 +292,13 @@ export default function Footer() {
                 fontFamily: "var(--font-body)",
               }}
             >
-              Navegación
+              {t.navigation}
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.625rem" }}>
               {quickLinks.map((l) => (
                 <li key={l.href}>
                   <Link
-                    href={l.href}
+                    href={href(l.href)}
                     style={{
                       fontSize: "0.875rem",
                       color: "rgba(255,255,255,0.5)",
@@ -270,7 +306,7 @@ export default function Footer() {
                       transition: "color 0.15s",
                     }}
                   >
-                    {l.label}
+                    {l.label[locale]}
                   </Link>
                 </li>
               ))}
@@ -290,7 +326,7 @@ export default function Footer() {
                 fontFamily: "var(--font-body)",
               }}
             >
-              Contacto
+              {t.contact}
             </h4>
             <address
               style={{
@@ -369,13 +405,13 @@ export default function Footer() {
           }}
         >
           <p style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.22)", letterSpacing: "0.04em" }}>
-            © {new Date().getFullYear()} Dra. Alejandra Téllez. Todos los derechos reservados.
+            © {new Date().getFullYear()} {t.rights}
           </p>
           <p style={{ fontSize: "0.65rem", color: "rgba(255,255,255,0.18)" }}>
-            Matrícula profesional: 1030537845 · Información con fines educativos. No reemplaza la consulta médica.
+            {t.license}
           </p>
           <Link
-            href="/politica-de-privacidad"
+            href={href("/politica-de-privacidad")}
             style={{
               fontSize: "0.65rem",
               color: "rgba(255,255,255,0.25)",
@@ -385,7 +421,7 @@ export default function Footer() {
               paddingBottom: "1px",
             }}
           >
-            Política de Privacidad · Ley 1581 de 2012
+            {t.privacy}
           </Link>
         </div>
       </div>

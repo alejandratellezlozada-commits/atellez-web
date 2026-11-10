@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.description,
     keywords: post.keywords,
     authors: [{ name: post.author }],
-    alternates: { canonical: `https://alejandratellezderma.com/blog/${slug}` },
+    alternates: alternatesFor(`/blog/${slug}`, "es"),
     openGraph: {
       type: "article",
       title: post.title,

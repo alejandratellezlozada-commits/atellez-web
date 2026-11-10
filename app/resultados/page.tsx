@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 export const metadata: Metadata = {
   title: "Resultados Antes y Después — Dra. Alejandra Téllez, Dermatóloga",
   description:
     "Galería de resultados reales de procedimientos realizados por la Dra. Alejandra Téllez: botox, ácido hialurónico en labios y ojeras, rinomodelación, Sculptra, Cosmelan y alopecia.",
-  alternates: { canonical: "https://alejandratellezderma.com/resultados" },
+  alternates: alternatesFor("/resultados", "es"),
   openGraph: {
     title: "Resultados Antes y Después — Dra. Alejandra Téllez",
     description:

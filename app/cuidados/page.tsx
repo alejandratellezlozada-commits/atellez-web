@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Cuidados Antes y Después de Procedimientos — Dra. Téllez",
   description:
     "Recomendaciones pre y post procedimiento para toxina botulínica, ácido hialurónico en labios, pómulos y ojeras, y Sculptra. Instrucciones de la Dra. Alejandra Téllez, dermatóloga en Bogotá.",
-  alternates: { canonical: "https://alejandratellezderma.com/cuidados" },
+  alternates: alternatesFor("/cuidados", "es"),
   openGraph: {
     title: "Cuidados Pre y Post Procedimiento — Dra. Alejandra Téllez",
     description:

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   title: "Perfil de la Dra. Alejandra Téllez — Dermatóloga en Bogotá",
   description:
     "Conoce el perfil de la Dra. Alejandra Téllez: formación en Universidad de Los Andes, Tulane University y Hospital Italiano de Buenos Aires. Vocera Abbott para ácido hialurónico, embajadora Fagron. 8+ años de experiencia.",
-  alternates: { canonical: "https://alejandratellezderma.com/perfil" },
+  alternates: alternatesFor("/perfil", "es"),
   openGraph: {
     title: "Perfil — Dra. Alejandra Téllez, Dermatóloga Bogotá",
     description:

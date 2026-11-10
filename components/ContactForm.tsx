@@ -1,22 +1,77 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "@/lib/useLocale";
 
-const servicios = [
-  "Consulta general de dermatología",
-  "Tratamiento del acné",
-  "Toxina botulínica (Botox)",
-  "Ácido hialurónico (fillers)",
-  "Láser CO2",
-  "Peeling químico / Cosmelan",
-  "Alopecia / caída del cabello",
-  "Depilación láser",
-  "Retiro de lunares o lipomas",
-  "Sculptra",
-  "Otro",
-];
+const text = {
+  es: {
+    services: [
+      "Consulta general de dermatología",
+      "Tratamiento del acné",
+      "Toxina botulínica (Botox)",
+      "Ácido hialurónico (fillers)",
+      "Láser CO2",
+      "Peeling químico / Cosmelan",
+      "Alopecia / caída del cabello",
+      "Depilación láser",
+      "Retiro de lunares o lipomas",
+      "Sculptra",
+      "Otro",
+    ],
+    greeting: "Hola Dra. Alejandra, le escribo desde el sitio web.",
+    name: "Nombre",
+    phone: "Teléfono",
+    reason: "Motivo de consulta",
+    notSpecified: "No especificado",
+    message: "Mensaje",
+    readyTitle: "¡Mensaje listo para enviar!",
+    readyBody: "Se abrió WhatsApp con tu información. Envía el mensaje y te responderemos en horario de atención.",
+    sendAnother: "Enviar otro mensaje",
+    fullName: "Nombre completo *",
+    namePlaceholder: "Tu nombre",
+    phoneLabel: "Teléfono / WhatsApp *",
+    selectService: "Selecciona un servicio (opcional)",
+    extraMessage: "Mensaje adicional",
+    messagePlaceholder: "Cuéntanos brevemente tu caso o dudas...",
+    notice: "Al enviar, se abrirá WhatsApp con tu información lista para enviar. No almacenamos datos de este formulario.",
+    submit: "Enviar por WhatsApp →",
+  },
+  en: {
+    services: [
+      "General dermatology consultation",
+      "Acne treatment",
+      "Botulinum toxin (Botox)",
+      "Hyaluronic acid (fillers)",
+      "CO2 laser",
+      "Chemical peel / Cosmelan",
+      "Alopecia / hair loss",
+      "Laser hair removal",
+      "Mole or lipoma removal",
+      "Sculptra",
+      "Other",
+    ],
+    greeting: "Hello Dr. Alejandra, I'm writing from your website.",
+    name: "Name",
+    phone: "Phone",
+    reason: "Reason for consultation",
+    notSpecified: "Not specified",
+    message: "Message",
+    readyTitle: "Your message is ready to send!",
+    readyBody: "WhatsApp has opened with your information. Send the message and we'll reply during office hours.",
+    sendAnother: "Send another message",
+    fullName: "Full name *",
+    namePlaceholder: "Your name",
+    phoneLabel: "Phone / WhatsApp *",
+    selectService: "Select a service (optional)",
+    extraMessage: "Additional message",
+    messagePlaceholder: "Briefly tell us about your case or questions...",
+    notice: "When you submit, WhatsApp will open with your information ready to send. We don't store any data from this form.",
+    submit: "Send via WhatsApp →",
+  },
+};
 
 export default function ContactForm() {
+  const t = text[useLocale()];
   const [form, setForm] = useState({
     nombre: "",
     telefono: "",
@@ -34,12 +89,12 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = [
-      `Hola Dra. Alejandra, le escribo desde el sitio web.`,
+      t.greeting,
       ``,
-      `*Nombre:* ${form.nombre}`,
-      `*Teléfono:* ${form.telefono}`,
-      `*Motivo de consulta:* ${form.servicio || "No especificado"}`,
-      form.mensaje ? `*Mensaje:* ${form.mensaje}` : "",
+      `*${t.name}:* ${form.nombre}`,
+      `*${t.phone}:* ${form.telefono}`,
+      `*${t.reason}:* ${form.servicio || t.notSpecified}`,
+      form.mensaje ? `*${t.message}:* ${form.mensaje}` : "",
     ]
       .filter(Boolean)
       .join("\n");
@@ -108,10 +163,10 @@ export default function ContactForm() {
             marginBottom: "0.75rem",
           }}
         >
-          ¡Mensaje listo para enviar!
+          {t.readyTitle}
         </h3>
         <p style={{ fontSize: "0.9rem", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>
-          Se abrió WhatsApp con tu información. Envía el mensaje y te responderemos en horario de atención.
+          {t.readyBody}
         </p>
         <button
           onClick={() => setSubmitted(false)}
@@ -127,7 +182,7 @@ export default function ContactForm() {
             textDecoration: "underline",
           }}
         >
-          Enviar otro mensaje
+          {t.sendAnother}
         </button>
       </div>
     );
@@ -137,20 +192,20 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="nombre" style={labelStyle}>Nombre completo *</label>
+          <label htmlFor="nombre" style={labelStyle}>{t.fullName}</label>
           <input
             id="nombre"
             name="nombre"
             type="text"
             required
-            placeholder="Tu nombre"
+            placeholder={t.namePlaceholder}
             value={form.nombre}
             onChange={handleChange}
             style={inputStyle}
           />
         </div>
         <div>
-          <label htmlFor="telefono" style={labelStyle}>Teléfono / WhatsApp *</label>
+          <label htmlFor="telefono" style={labelStyle}>{t.phoneLabel}</label>
           <input
             id="telefono"
             name="telefono"
@@ -165,7 +220,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="servicio" style={labelStyle}>Motivo de consulta</label>
+        <label htmlFor="servicio" style={labelStyle}>{t.reason}</label>
         <select
           id="servicio"
           name="servicio"
@@ -173,20 +228,20 @@ export default function ContactForm() {
           onChange={handleChange}
           style={{ ...inputStyle, appearance: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1rem center" }}
         >
-          <option value="">Selecciona un servicio (opcional)</option>
-          {servicios.map((s) => (
+          <option value="">{t.selectService}</option>
+          {t.services.map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}
         </select>
       </div>
 
       <div>
-        <label htmlFor="mensaje" style={labelStyle}>Mensaje adicional</label>
+        <label htmlFor="mensaje" style={labelStyle}>{t.extraMessage}</label>
         <textarea
           id="mensaje"
           name="mensaje"
           rows={4}
-          placeholder="Cuéntanos brevemente tu caso o dudas..."
+          placeholder={t.messagePlaceholder}
           value={form.mensaje}
           onChange={handleChange}
           style={{ ...inputStyle, resize: "vertical", minHeight: "110px" }}
@@ -211,7 +266,7 @@ export default function ContactForm() {
           </svg>
         </div>
         <p style={{ fontSize: "0.8rem", color: "var(--color-text-muted)", lineHeight: 1.6, paddingTop: "0.25rem" }}>
-          Al enviar, se abrirá WhatsApp con tu información lista para enviar. No almacenamos datos de este formulario.
+          {t.notice}
         </p>
       </div>
 
@@ -232,7 +287,7 @@ export default function ContactForm() {
           alignSelf: "flex-start",
         }}
       >
-        Enviar por WhatsApp →
+        {t.submit}
       </button>
     </form>
   );

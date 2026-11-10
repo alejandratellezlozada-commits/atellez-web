@@ -2,11 +2,34 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useLocale } from "@/lib/useLocale";
 
 const STORAGE_KEY = "cookie_consent_v1";
 
+const text = {
+  es: {
+    aria: "Aviso de cookies",
+    title: "Usamos cookies",
+    body: "Utilizamos cookies propias y de terceros (Google Analytics, Google Maps) para mejorar tu experiencia. Puedes aceptar todas o solo las estrictamente necesarias.",
+    more: "Más información",
+    privacyHref: "/politica-de-privacidad",
+    accept: "Aceptar todas",
+    decline: "Solo esenciales",
+  },
+  en: {
+    aria: "Cookie notice",
+    title: "We use cookies",
+    body: "We use our own and third-party cookies (Google Analytics, Google Maps) to improve your experience. You can accept all of them or only the strictly necessary ones.",
+    more: "Learn more",
+    privacyHref: "/en/privacy-policy",
+    accept: "Accept all",
+    decline: "Essential only",
+  },
+};
+
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
+  const t = text[useLocale()];
 
   useEffect(() => {
     if (!localStorage.getItem(STORAGE_KEY)) {
@@ -30,7 +53,7 @@ export default function CookieBanner() {
   return (
     <div
       role="dialog"
-      aria-label="Aviso de cookies"
+      aria-label={t.aria}
       aria-live="polite"
       style={{
         position: "fixed",
@@ -66,16 +89,15 @@ export default function CookieBanner() {
           lineHeight: 1.2,
         }}
       >
-        Usamos cookies
+        {t.title}
       </p>
       <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.65, marginBottom: "1.25rem" }}>
-        Utilizamos cookies propias y de terceros (Google Analytics, Google Maps) para mejorar tu experiencia.
-        Puedes aceptar todas o solo las estrictamente necesarias.{" "}
+        {t.body}{" "}
         <Link
-          href="/politica-de-privacidad"
+          href={t.privacyHref}
           style={{ color: "var(--color-gold-light)", textDecoration: "underline" }}
         >
-          Más información
+          {t.more}
         </Link>
       </p>
 
@@ -96,7 +118,7 @@ export default function CookieBanner() {
             transition: "opacity 0.15s",
           }}
         >
-          Aceptar todas
+          {t.accept}
         </button>
         <button
           onClick={decline}
@@ -114,7 +136,7 @@ export default function CookieBanner() {
             transition: "border-color 0.15s",
           }}
         >
-          Solo esenciales
+          {t.decline}
         </button>
       </div>
     </div>

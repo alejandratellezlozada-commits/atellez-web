@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts, formatDate } from "@/lib/mdx";
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: "Dra. Alejandra Téllez — Dermatóloga en Bogotá",
   description:
     "Dermatóloga clínica y estética en Bogotá con más de 8 años de experiencia. Acné, alopecia, botox, láser CO2, peeling y más. 531 reseñas con 5 estrellas. Agenda tu cita.",
-  alternates: { canonical: "https://alejandratellezderma.com" },
+  alternates: alternatesFor("/", "es"),
 };
 
 const featuredServices = [
