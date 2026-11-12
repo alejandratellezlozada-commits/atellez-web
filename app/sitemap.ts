@@ -9,17 +9,17 @@ const BASE_URL = "https://alejandratellezderma.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
-    { url: `${BASE_URL}/perfil`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/servicios`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE_URL}/noticias`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BASE_URL}/resultados`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/contacto`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/`, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
+    { url: `${BASE_URL}/perfil/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/servicios/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/blog/`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE_URL}/noticias/`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE_URL}/resultados/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/contacto/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
   ];
 
   const serviceRoutes: MetadataRoute.Sitemap = services.map((s) => ({
-    url: `${BASE_URL}/servicios/${s.slug}`,
+    url: `${BASE_URL}/servicios/${s.slug}/`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.85,
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPosts = getAllPosts("blog");
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((p) => ({
-    url: `${BASE_URL}/blog/${p.slug}`,
+    url: `${BASE_URL}/blog/${p.slug}/`,
     lastModified: new Date(p.date),
     changeFrequency: "yearly" as const,
     priority: 0.7,
@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const noticias = getAllPosts("noticias");
   const noticiasRoutes: MetadataRoute.Sitemap = noticias.map((p) => ({
-    url: `${BASE_URL}/noticias/${p.slug}`,
+    url: `${BASE_URL}/noticias/${p.slug}/`,
     lastModified: new Date(p.date),
     changeFrequency: "yearly" as const,
     priority: 0.6,
@@ -44,9 +44,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const spanish = [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...noticiasRoutes];
 
   // English version of every page (/en/...), with hreflang alternates both ways.
+  // URLs end in "/" to match trailingSlash: true and the canonical tags (no redirects).
   const withAlternates = (entry: MetadataRoute.Sitemap[number]): MetadataRoute.Sitemap[number] => {
     const esPath = entry.url.slice(BASE_URL.length) || "/";
-    const en = BASE_URL + esPathToEn(esPath).replace(/\/$/, "");
+    const en = BASE_URL + esPathToEn(esPath);
     return { ...entry, alternates: { languages: { "es-CO": entry.url, en } } };
   };
   const english: MetadataRoute.Sitemap = spanish.map((entry) => {
