@@ -61,7 +61,7 @@ export const servicesEn: Service[] = [
     categoryLabel: "Aesthetic Dermatology",
     duration: "30–45 minutes",
     sessions: "1 session · effect in 7–14 days",
-    priceRange: "From $1,100,000 COP",
+    priceRange: "From $1,200,000 COP",
     candidates: [
       "Adults with expression lines on the forehead, between the brows or crow's feet",
       "People looking for natural, subtle facial rejuvenation",
@@ -111,7 +111,7 @@ export const servicesEn: Service[] = [
     categoryLabel: "Aesthetic Dermatology",
     duration: "30–60 minutes",
     sessions: "1 session · immediate results",
-    priceRange: "From $1,100,000 COP per syringe",
+    priceRange: "From $1,300,000 COP per syringe",
     candidates: [
       "People who want to enhance or define their lips",
       "Patients with deep under-eye hollows or a marked tear trough",
@@ -361,7 +361,7 @@ export const servicesEn: Service[] = [
     categoryLabel: "Clinical Dermatology",
     duration: "20–45 minutes",
     sessions: "1 session",
-    priceRange: "From $380,000 COP",
+    priceRange: "From $450,000 COP",
     candidates: [
       "People with moles that have changed in shape, color or size",
       "Those who want to remove a mole for cosmetic reasons or because it is bothersome",
@@ -413,7 +413,7 @@ export const servicesEn: Service[] = [
     categoryLabel: "Aesthetic Dermatology",
     duration: "30–45 minutes per session",
     sessions: "2–3 sessions · 4–6 weeks apart",
-    priceRange: "From $1,800,000 COP per session",
+    priceRange: "From $2,500,000 COP per session",
     candidates: [
       "People aged 35 to 60 with loss of facial volume (cheeks, temples, jawline)",
       "Patients with moderate skin laxity who prefer a gradual, natural result",
@@ -465,7 +465,7 @@ export const servicesEn: Service[] = [
     categoryLabel: "Aesthetic Dermatology",
     duration: "40–60 minutes in the office",
     sessions: "1 session + at-home maintenance",
-    priceRange: "$2,100,000 COP",
+    priceRange: "$2,400,000 COP",
     candidates: [
       "People with melasma (pregnancy mask, contraceptive-related or hormonal spots)",
       "Patients with sun spots or accumulated sun damage",
@@ -517,6 +517,7 @@ export const servicesEn: Service[] = [
     categoryLabel: "Aesthetic Dermatology",
     duration: "Quick session: you return to your routine the same day",
     sessions: "3 sessions (one per month) + 3 months of at-home routine",
+    priceRange: "$2,200,000 COP",
     candidates: [
       "People with facial sun spots or melasma",
       "Those with dark marks after acne or skin inflammation",

@@ -85,7 +85,7 @@ export const services: Service[] = [
     categoryLabel: "Dermatología Estética",
     duration: "30–45 minutos",
     sessions: "1 sesión · efecto en 7–14 días",
-    priceRange: "Desde $1.100.000 COP",
+    priceRange: "Desde $1.200.000 COP",
     candidates: [
       "Adultos con líneas de expresión en frente, entrecejo o patas de gallo",
       "Personas que buscan un rejuvenecimiento facial natural y sutil",
@@ -135,7 +135,7 @@ export const services: Service[] = [
     categoryLabel: "Dermatología Estética",
     duration: "30–60 minutos",
     sessions: "1 sesión · resultado inmediato",
-    priceRange: "Desde $1.100.000 COP por jeringa",
+    priceRange: "Desde $1.300.000 COP por jeringa",
     candidates: [
       "Personas que desean aumentar o definir los labios",
       "Pacientes con ojeras profundas o surco nasoyugal marcado",
@@ -385,7 +385,7 @@ export const services: Service[] = [
     categoryLabel: "Dermatología Clínica",
     duration: "20–45 minutos",
     sessions: "1 sesión",
-    priceRange: "Desde $380.000 COP",
+    priceRange: "Desde $450.000 COP",
     candidates: [
       "Personas con lunares que han cambiado de forma, color o tamaño",
       "Quienes desean retirar un lunar por razones estéticas o porque genera molestia",
@@ -437,7 +437,7 @@ export const services: Service[] = [
     categoryLabel: "Dermatología Estética",
     duration: "30–45 minutos por sesión",
     sessions: "2–3 sesiones · intervalo de 4–6 semanas",
-    priceRange: "Desde $1.800.000 COP por sesión",
+    priceRange: "Desde $2.500.000 COP por sesión",
     candidates: [
       "Personas entre 35 y 60 años con pérdida de volumen facial (mejillas, sienes, mandíbula)",
       "Pacientes con laxitud cutánea moderada que prefieren un resultado gradual y natural",
@@ -489,7 +489,7 @@ export const services: Service[] = [
     categoryLabel: "Dermatología Estética",
     duration: "40–60 minutos en consultorio",
     sessions: "1 sesión + mantenimiento en casa",
-    priceRange: "$2.100.000 COP",
+    priceRange: "$2.400.000 COP",
     candidates: [
       "Personas con melasma (manchas del embarazo, anticonceptivos u hormonales)",
       "Pacientes con manchas solares o daño solar acumulado",
@@ -541,6 +541,7 @@ export const services: Service[] = [
     categoryLabel: "Dermatología Estética",
     duration: "Sesión rápida: vuelves a tu rutina el mismo día",
     sessions: "3 sesiones (una cada mes) + 3 meses de rutina en casa",
+    priceRange: "$2.200.000 COP",
     candidates: [
       "Personas con manchas en la cara por el sol o con paño (melasma)",
       "Quienes tienen manchas después del acné o de una inflamación de la piel",
