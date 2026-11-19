@@ -22,6 +22,7 @@ const serviceVisuals: Record<string, { image: string; position: string; tag: str
   "retiro-lunares-lipomas": { image: "/images/servicios/retiro-lunares-lipomas.webp",position: "center 30%", tag: "Clínica",    benefit: "Sin Lesiones" },
   "depilacion-laser":       { image: "/images/servicios/depilacion-laser.webp",      position: "center 70%", tag: "Láser",      benefit: "Sin Pelo" },
   "cosmelan":               { image: "/images/servicios/cosmelan.webp",              position: "center 40%", tag: "Estética",   benefit: "Sin Manchas" },
+  "meline":                 { image: "/images/servicios/meline.webp",                position: "center 40%", tag: "Estética",   benefit: "Menos Manchas" },
   "sculptra":               { image: "/images/servicios/acido-hialuronico.webp",     position: "center 35%", tag: "Estética",   benefit: "Colágeno" },
 };
 

@@ -14,6 +14,8 @@ export interface Service {
   faq: { q: string; a: string }[];
   relatedServices: string[];
   keywords: string[];
+  /** Optional before/after photos (patients consented to web publication). */
+  results?: { src: string; alt: string }[];
 }
 
 export const services: Service[] = [
@@ -428,6 +430,51 @@ export const services: Service[] = [
     ],
     relatedServices: ["peeling-quimico", "laser-co2", "acne"],
     keywords: ["cosmelan bogotá", "manchas bogotá", "melasma bogotá", "hiperpigmentación bogotá", "tratamiento manchas cara bogotá", "dermatologa manchas bogotá"],
+  },
+  {
+    slug: "meline",
+    title: "Meline",
+    shortDescription: "Tratamiento despigmentante para aclarar manchas y paño (melasma), emparejar el tono y darle más luz a tu piel. Combina 3 sesiones en consultorio con una rutina en casa adaptada a tu tipo de piel.",
+    description: "Meline es un tratamiento médico para aclarar las manchas de la cara, incluido el paño (melasma), y emparejar el tono de la piel. Trabaja en dos fases: primero, 3 sesiones en consultorio, una cada mes, con el paso más intensivo del tratamiento; después, 3 meses de rutina en casa con una crema de día y una de noche que potencian el aclarado y ayudan a que el resultado dure más. Además de aclarar las manchas, renueva la capa más superficial de la piel: la textura se siente más suave, los poros se ven menos y la piel luce más luminosa. Hay una fórmula para piel clara y otra más suave para piel trigueña y morena, que aclara sin irritar ni dejar manchas de rebote. En tu valoración reviso tu piel y tus manchas, y definimos cuál es la indicada para ti.",
+    category: "estetica",
+    categoryLabel: "Dermatología Estética",
+    duration: "Sesión rápida: vuelves a tu rutina el mismo día",
+    sessions: "3 sesiones (una cada mes) + 3 meses de rutina en casa",
+    candidates: [
+      "Personas con manchas en la cara por el sol o con paño (melasma)",
+      "Quienes tienen manchas después del acné o de una inflamación de la piel",
+      "Pieles con tono disparejo, opacas o sin luz",
+      "Quienes buscan una textura más suave y poros menos visibles",
+      "Piel clara, trigueña o morena: hay una fórmula para cada tipo de piel",
+    ],
+    process: [
+      "Valoración médica: reviso tu piel y tus manchas y defino la fórmula indicada para ti",
+      "Fase 1 en consultorio: 3 sesiones, una cada mes, con el paso más intensivo del tratamiento",
+      "Cada sesión es rápida y vuelves a tu rutina el mismo día",
+      "Fase 2 en casa: durante 3 meses usas una crema de día y una de noche que potencian el aclarado",
+      "Controles para revisar cómo responde tu piel y ajustar el plan",
+    ],
+    aftercare: [
+      "Protector solar todos los días, sin excepción: hace parte del tratamiento",
+      "Usar las cremas de día y de noche exactamente como te las indico",
+      "Evitar el sol directo y reaplicar el protector si estás al aire libre",
+      "No usar otros ácidos, exfoliantes ni retinoides sin mi autorización",
+      "Mantener la piel bien hidratada",
+      "Asistir a los controles programados",
+    ],
+    results: [
+      { src: "/images/servicios/meline-antes-despues-1.webp", alt: "Meline antes y después: manchas en la mejilla más claras y tono más parejo" },
+      { src: "/images/servicios/meline-antes-despues-2.webp", alt: "Meline antes y después: paño (melasma) en la mejilla más claro" },
+    ],
+    faq: [
+      { q: "¿Meline sirve para el paño (melasma)?", a: "Sí. Meline está pensado para aclarar manchas y paño, y para ayudar a que no se vuelvan a oscurecer. Como el melasma puede reaparecer con el sol y los cambios hormonales, el protector solar diario y la rutina en casa son clave." },
+      { q: "¿Cuántas sesiones necesito?", a: "El tratamiento tiene 3 sesiones en consultorio, una cada mes, y luego 3 meses de rutina en casa con una crema de día y una de noche." },
+      { q: "¿Puedo hacerme Meline si tengo piel trigueña o morena?", a: "Sí. Hay una fórmula más suave para piel trigueña y morena, que aclara sin irritar ni dejar manchas de rebote. En la valoración defino cuál es la tuya." },
+      { q: "¿Tengo que dejar de trabajar después de la sesión?", a: "No. La sesión es rápida y vuelves a tu rutina el mismo día." },
+      { q: "¿Cuál es la diferencia entre Meline y Cosmelan?", a: "Los dos son tratamientos despigmentantes médicos para manchas y melasma, con protocolos diferentes. En la valoración reviso tu tipo de mancha y de piel, y te indico cuál te conviene más." },
+    ],
+    relatedServices: ["cosmelan", "peeling-quimico", "laser-co2"],
+    keywords: ["meline bogotá", "tratamiento manchas bogotá", "paño en la cara tratamiento", "melasma bogotá", "aclarar manchas de la cara", "despigmentante facial bogotá", "dermatóloga manchas bogotá"],
   },
   {
     slug: "depilacion-laser",

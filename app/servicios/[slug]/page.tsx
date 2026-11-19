@@ -18,6 +18,7 @@ const serviceImages: Record<string, { src: string; position: string }> = {
   "retiro-lunares-lipomas":{ src: "/images/servicios/retiro-lunares-lipomas.webp",position: "center 30%" },
   "depilacion-laser":      { src: "/images/servicios/depilacion-laser.webp",      position: "center 70%" },
   "cosmelan":              { src: "/images/servicios/peeling-quimico.webp",        position: "center 40%" },
+  "meline":                { src: "/images/servicios/meline.webp",                position: "center 40%" },
   "sculptra":              { src: "/images/servicios/acido-hialuronico.webp",      position: "center 35%" },
 };
 
@@ -272,6 +273,35 @@ export default async function ServicePage({ params }: Props) {
                   ))}
                 </div>
               </div>
+
+              {/* Resultados (antes y después) */}
+              {service.results && service.results.length > 0 && (
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+                    <span style={{ fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-gold)" }}>Resultados</span>
+                    <div style={{ flex: 1, height: "1px", background: "var(--color-border)" }} />
+                  </div>
+                  <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 300, color: "var(--color-text)", marginBottom: "1.25rem" }}>
+                    Antes y después
+                  </h2>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                    {service.results.map((r) => (
+                      <Image
+                        key={r.src}
+                        src={r.src}
+                        alt={r.alt}
+                        width={1400}
+                        height={582}
+                        sizes="(max-width: 1024px) 100vw, 66vw"
+                        style={{ width: "100%", height: "auto", borderRadius: "2px" }}
+                      />
+                    ))}
+                  </div>
+                  <p style={{ fontSize: "0.8rem", color: "var(--color-text-muted)", lineHeight: 1.6, marginTop: "0.75rem" }}>
+                    Fotos de pacientes reales, publicadas con su autorización. Los resultados varían según cada piel y requieren valoración médica previa.
+                  </p>
+                </div>
+              )}
 
               {/* Cuidados post */}
               <div style={{ background: "var(--color-primary-50)", border: "1px solid var(--color-border)", borderRadius: "2px", padding: "2rem" }}>
