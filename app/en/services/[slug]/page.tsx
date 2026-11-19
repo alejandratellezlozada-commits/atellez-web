@@ -183,6 +183,12 @@ export default async function ServicePage({ params }: Props) {
                   {service.sessions}
                 </span>
               )}
+              {service.effectShort && (
+                <span style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.75rem", color: "rgba(255,255,255,0.85)", background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: "2px", padding: "0.4rem 0.875rem" }}>
+                  <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                  {service.effectShort}
+                </span>
+              )}
             </div>
 
             <a
@@ -230,6 +236,27 @@ export default async function ServicePage({ params }: Props) {
                 </p>
               </div>
 
+              {/* Para qué sirve */}
+              {service.benefits && service.benefits.length > 0 && (
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-gold)" }}>Benefits</span>
+                  <div style={{ flex: 1, height: "1px", background: "var(--color-border)" }} />
+                </div>
+                <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 300, color: "var(--color-text)", marginBottom: "1.25rem" }}>
+                  What is it for?
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "0.75rem" }}>
+                  {service.benefits.map((b, i) => (
+                    <div key={i} style={{ display: "flex", gap: "0.875rem", alignItems: "flex-start", background: "var(--color-primary-50)", border: "1px solid var(--color-border)", borderRadius: "2px", padding: "1rem 1.125rem" }}>
+                      <span style={{ color: "var(--color-gold)", fontSize: "1rem", lineHeight: 1.3, flexShrink: 0 }}>✦</span>
+                      <p style={{ fontSize: "0.9rem", color: "var(--color-text)", lineHeight: 1.55 }}>{b}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              )}
+
               {/* Candidatos */}
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
@@ -273,6 +300,23 @@ export default async function ServicePage({ params }: Props) {
                   ))}
                 </div>
               </div>
+
+              {/* Cuánto dura el efecto */}
+              {service.effectDetail && (
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-gold)" }}>Duration</span>
+                  <div style={{ flex: 1, height: "1px", background: "var(--color-border)" }} />
+                </div>
+                <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 300, color: "var(--color-text)", marginBottom: "1.25rem" }}>
+                  How long does the effect last?
+                </h2>
+                {service.effectShort && (
+                  <p style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.5rem", fontWeight: 400, color: "var(--color-primary)", lineHeight: 1.2, marginBottom: "0.75rem" }}>{service.effectShort}</p>
+                )}
+                <p style={{ fontSize: "0.9375rem", color: "var(--color-text-secondary)", lineHeight: 1.85 }}>{service.effectDetail}</p>
+              </div>
+              )}
 
               {/* Resultados (antes y después) */}
               {service.results && service.results.length > 0 && (
@@ -321,6 +365,28 @@ export default async function ServicePage({ params }: Props) {
                   ))}
                 </div>
               </div>
+
+              {/* Por qué con la Dra. Téllez */}
+              {service.whyChoose && (
+              <div style={{ border: "1px solid var(--color-border)", borderLeft: "3px solid var(--color-gold)", borderRadius: "2px", padding: "2rem" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-gold)" }}>Your specialist</span>
+                  <div style={{ flex: 1, height: "1px", background: "var(--color-border)" }} />
+                </div>
+                <h2 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 300, color: "var(--color-text)", marginBottom: "1.25rem" }}>
+                  Why choose Dr. Téllez?
+                </h2>
+                <p style={{ fontSize: "0.9375rem", color: "var(--color-text-secondary)", lineHeight: 1.85, marginBottom: "1.5rem" }}>{service.whyChoose}</p>
+                <a
+                  href="https://www.doctoralia.co/alejandra-tellez/dermatologo/bogota"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "inline-block", padding: "0.875rem 2rem", background: "var(--color-primary)", color: "white", borderRadius: "2px", fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none" }}
+                >
+                  Book your assessment →
+                </a>
+              </div>
+              )}
 
               {/* FAQ */}
               <div>
